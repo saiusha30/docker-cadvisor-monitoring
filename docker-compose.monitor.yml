@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  cadvisor:
+    image: gcr.io/cadvisor/cadvisor:latest
+    container_name: cadvisor
+    ports:
+      - "8080:8080"  # Exposes port 8080 for accessing cAdvisor UI
+    volumes:
+      - /:/rootfs:ro      # Mounts root filesystem (for monitoring)
+      - /var/run:/var/run:ro
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+    restart: unless-stopped  # Automatically restarts if it stops
+

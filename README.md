@@ -1,14 +1,20 @@
 # Docker cAdvisor Monitoring
 
-This project sets up cAdvisor for monitoring Docker containers in real-time
-## Features
+This project demonstrates how to monitor Docker containers using  cAdvisor. It provides real-time insights into resource usage and performance metric of running container
+##  key metrics via cAdvisor
+CPU usage
+memory consumption
+Network I/O
+filesystem 
+continer uptime
+ ## Features
 
 - **Real-time container monitoring**: Track resource usage like CPU, memory, network, and disk.
 - **Web-based dashboard**: View the metrics in a simple and interactive web UI.
 - **Lightweight and simple setup**: Easy to get started with Docker and Docker Compose.
   
 ## Prerequisites
-
+- git
 - Docker
 - Docker Compose
 - Basic knowledge of Docker containers
@@ -33,7 +39,8 @@ https://github.com/saiusha30/docker-cadvisor-monitoring.git
 ## preinstalled
 
 docker,
-docker compose
+docker compose,
+git
 ## Set Up cAdvisor Using Docker Compose
 The Docker Compose file provided in the project will set up cAdvisor in a container that will monitor other running Docker containers.
 
@@ -48,6 +55,9 @@ cAdvisor will expose a web UI on port 8080 by default.
 ## Access the cAdvisor Dashboard
 
 ip address:8080
+
+![image](https://github.com/user-attachments/assets/21ce6996-3dd2-4236-bbff-ebeacf2e6c89)
+
 
 
 ## Running Your Own Containers
@@ -71,6 +81,8 @@ If cAdvisor does not show containers, make sure that you have the necessary Dock
 /var/lib/docker/:/var/lib/docker:ro
 
 Ensure Docker is running and that the containers are started before accessing the cAdvisor dashboard.
+## How to stop and remove cAdvisor
+docker stop cadvisor $$ docker rm cadvisor
 
 
 ##Conclusion
